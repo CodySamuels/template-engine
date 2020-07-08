@@ -20,23 +20,24 @@ const mainMenu = () => {
             "Add a team member",
             "Exit and generate the HTML.",
         ]
-    }).then( ({ choice }) => {
+
+    }).then(({ choice }) => {
         switch (choice) {
             case "Add a team member":
-                teamMemberPosition();
+                addTeamMemberQuestions();
                 break;
 
             default: "Exit and generate the HMTL."
-            const output = render(employees)
-            fs.writeFileSync(outputPath, output)
-            console.log("Thank you! Template.html has been generated!")
+                const output = render(employees)
+                fs.writeFileSync(outputPath, output)
+                console.log("Thank you! Template.html has been generated!")
                 break;
         }
     })
 
 }
 
-const teamMemberPosition = () => {
+const addTeamMemberQuestions = () => {
     inquirer.prompt([
         {
             type: "list",
@@ -47,112 +48,67 @@ const teamMemberPosition = () => {
                 "Engineer",
                 "Manager",
             ]
-        }
-        
+        }, {
+            type: "input",
+            message: "Team Member Name?",
+            name: "name"
+        }, {
+            type: "input",
+            message: "Team Member ID?",
+            name: "id"
+        }, {
+            type: "input",
+            message: "Team Member Email?",
+            name: "email"
+        },
+
     ]).then(answers => {
         if (answers.position === "Intern") {
-            console.log("Intern")
-            internQuestion()
-            
+
+            inquirer.prompt(
+                {
+                    type: "input",
+                    message: "Team Member's School?",
+                    name: "school"
+                }).then(schoolResponse => {
+                    const newTeamMember = new Intern(answers.name, answers.id, answers.email, schoolResponse.school)
+                    employees.push(newTeamMember)
+                    console.log(employees)
+                    mainMenu()
+                })
+
         } else if (answers.position === "Engineer") {
-            console.log("Engineer")
-            engineerQuestion()
-            
+
+            inquirer.prompt(
+                {
+                    type: "input",
+                    message: "Team Member's GitHub?",
+                    name: "github"
+                }).then(githubResponse => {
+                    const newTeamMember = new Engineer(answers.name, answers.id, answers.email, githubResponse.github)
+                    employees.push(newTeamMember)
+                    console.log(employees)
+                    mainMenu()
+                })
+
         } else if (answers.position === "Manager") {
-            console.log("Manager")
-            managerQuestion()
-            
+
+            inquirer.prompt(
+                {
+                    type: "input",
+                    message: "Team Member's Office Number?",
+                    name: "officeNumber"
+                }).then(officeNumberResponse => {
+                    const newTeamMember = new Manager(answers.name, answers.id, answers.email, officeNumberResponse.officeNumber)
+                    employees.push(newTeamMember)
+                    console.log(employees)
+                    mainMenu()
+                })
+
         } else {
             console.log("Error")
         }
-        
-    })
-}
 
-const internQuestion = () => {
-    inquirer.prompt([
-        
-        {
-            type: "input",
-            message: "Team Member Name?",
-            name: "name"
-        }, {
-            type: "input",
-            message: "Team Member ID?",
-            name: "id"
-        }, {
-            type: "input",
-            message: "Team Member Email?",
-            name: "email"
-        }, {
-            type: "input",
-            message: "Team Member School?",
-            name: "school"
-        }
-        
-    ]).then(answers => {
-        const newTeamMember = new Intern(answers.name, answers.id, answers.email, answers.school)
-        employees.push(newTeamMember)
-        console.log(employees)
-        mainMenu()
-    })
-}
-
-const engineerQuestion = () => {
-    inquirer.prompt([
-        
-        {
-            type: "input",
-            message: "Team Member Name?",
-            name: "name"
-        }, {
-            type: "input",
-            message: "Team Member ID?",
-            name: "id"
-        }, {
-            type: "input",
-            message: "Team Member Email?",
-            name: "email"
-        }, {
-            type: "input",
-            message: "Team Member's GitHub?",
-            name: "github"
-        }
-        
-    ]).then(answers => {
-        const newTeamMember = new Engineer(answers.name, answers.id, answers.email, answers.github)
-        employees.push(newTeamMember)
-        console.log(employees)
-        mainMenu()
-    })
-}
-
-const managerQuestion = () => {
-    inquirer.prompt([
-        
-        {
-            type: "input",
-            message: "Team Member Name?",
-            name: "name"
-        }, {
-            type: "input",
-            message: "Team Member ID?",
-            name: "id"
-        }, {
-            type: "input",
-            message: "Team Member Email?",
-            name: "email"
-        }, {
-            type: "input",
-            message: "Team Member's Office Number?",
-            name: "officeNumber"
-        }
-        
-    ]).then(answers => {
-        const newTeamMember = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-        employees.push(newTeamMember)
-        console.log(employees)
-        mainMenu()
     })
 }
 
