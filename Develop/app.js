@@ -26,16 +26,15 @@ const mainMenu = () => {
                 teamMemberPosition();
                 break;
 
-            case "Exit and generate the HMTL.":
-                console.log("Thank you!")
-                render(employees)
+            default: "Exit and generate the HMTL."
+            const output = render(employees)
+            fs.writeFileSync("template.html", output)
+            console.log("Thank you! Template.html has been generated!")
                 break;
         }
     })
 
 }
-
-mainMenu()
 
 const teamMemberPosition = () => {
     inquirer.prompt([
@@ -49,30 +48,30 @@ const teamMemberPosition = () => {
                 "Manager",
             ]
         }
-
+        
     ]).then(answers => {
         if (answers.position === "Intern") {
             console.log("Intern")
             internQuestion()
-
+            
         } else if (answers.position === "Engineer") {
             console.log("Engineer")
             engineerQuestion()
-
+            
         } else if (answers.position === "Manager") {
             console.log("Manager")
             managerQuestion()
-
+            
         } else {
             console.log("Error")
         }
-
+        
     })
 }
 
 const internQuestion = () => {
     inquirer.prompt([
-
+        
         {
             type: "input",
             message: "Team Member Name?",
@@ -90,7 +89,7 @@ const internQuestion = () => {
             message: "Team Member School?",
             name: "school"
         }
-
+        
     ]).then(answers => {
         const newTeamMember = new Intern(answers.name, answers.id, answers.email, answers.school)
         employees.push(newTeamMember)
@@ -101,7 +100,7 @@ const internQuestion = () => {
 
 const engineerQuestion = () => {
     inquirer.prompt([
-
+        
         {
             type: "input",
             message: "Team Member Name?",
@@ -119,7 +118,7 @@ const engineerQuestion = () => {
             message: "Team Member's GitHub?",
             name: "github"
         }
-
+        
     ]).then(answers => {
         const newTeamMember = new Engineer(answers.name, answers.id, answers.email, answers.github)
         employees.push(newTeamMember)
@@ -130,7 +129,7 @@ const engineerQuestion = () => {
 
 const managerQuestion = () => {
     inquirer.prompt([
-
+        
         {
             type: "input",
             message: "Team Member Name?",
@@ -148,7 +147,7 @@ const managerQuestion = () => {
             message: "Team Member's Office Number?",
             name: "officeNumber"
         }
-
+        
     ]).then(answers => {
         const newTeamMember = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
         employees.push(newTeamMember)
@@ -156,3 +155,5 @@ const managerQuestion = () => {
         mainMenu()
     })
 }
+
+mainMenu()
