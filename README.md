@@ -119,57 +119,54 @@ In addition to `Employee`'s properties and methods, `Intern` will also have:
 
   * getRole() // Overridden to return 'Intern'
 
-### User input
-
-The project must prompt the user to build an engineering team. An engineering
-team consists of a manager, and any number of engineers and interns.
-
-### Roster output
-
-The project must generate a `team.html` page in the `output` directory, that displays a nicely formatted team roster. Each team member should display the following in no particular order:
-
-  * Name
-
-  * Role
-
-  * ID
-
-  * Role-specific property (School, link to GitHub profile, or office number)
-
-## Bonus
-
-* Use validation to ensure that the information provided is in the proper expected format.
-
-* Add the application to your portfolio.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
 
 
-## Submission on BCS
 
-You are required to submit the following:
+  # README-generator [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) 
 
-* The URL of the GitHub repository
+  ## Description
+    This generates a basic README template that can be fleshed out to create a concise and useful README.
 
-* A video demonstrating the entirety of the app's functionality 
+  ## Screenshot of the Deployed Application  
+  ![Deployed Application Screenshot](./screenshots/screenshot1.png)
+  
+  ## Table of Contents
+  
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [Tests](#Tests)
+  4. [Contributing](#Contributing)
+  5. [Acknowledgements](#Acknowledgements)
+  6. [Questions](#Questions)
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+  
+
+  ## Installation
+  [Intallation Video](https://drive.google.com/file/d/1dwzlDfxg3-XC1g0V89JrcU_TxbGkail3/view?usp=sharing)
+  
+    Download the repo off of GitHub. node install. etc.
+
+  
+  ## Usage
+  [How to use Video](https://drive.google.com/file/d/1HZlUHFgxIwMKxz2Zh2nRL-OUsQhQO6DG/view?usp=sharing)
+
+    You run it from the command line and follow the prompts. Use node index.js.
+  
+  ## Tests
+  
+    npm tests
+  
+  ## Contributing
+  
+    If you would like to contribute to this repository, please first discuss the changes you would like to make with a developer. You can merge a pull request after the review of at least two developers.
+  
+  ## Acknowledgements
+  
+  [CodySamuels](https://www.github.com/CodySamuels), the author.
+  
+  [README-Generator](https://www.github.com/CodySamuels/readme-generator), the project
+
+  
+  ## Questions
+
+    You can ask any questions at twowoodenspoons@gmail.com
