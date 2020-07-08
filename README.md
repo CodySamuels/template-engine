@@ -21,13 +21,12 @@
   ```
 
   ## Installation
-  [Intallation Video](https://drive.google.com/file/d/1dwzlDfxg3-XC1g0V89JrcU_TxbGkail3/view?usp=sharing)
   
-    Download the repo off of GitHub. node install. etc.
+    Clone the repo off of GitHub. npm install.
 
   
   ## Usage
-  [How to use Video](https://drive.google.com/file/d/1HZlUHFgxIwMKxz2Zh2nRL-OUsQhQO6DG/view?usp=sharing)
+  [How to use Video](https://drive.google.com/file/d/18jgKTyMM2ZCRTxbSxK03JAnB8KOthbFP/view?usp=sharing)
 
     You run it from the command line and follow the prompts. Use node index.js.
   
