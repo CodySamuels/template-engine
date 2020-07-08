@@ -11,7 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-function mainMenu() {
+const mainMenu = () => {
     inquirer.prompt({
         type: "list",
         name: "choice",
@@ -20,7 +20,7 @@ function mainMenu() {
             "Add a team member",
             "Exit and generate the HTML.",
         ]
-    }).then(function ({ choice }) {
+    }).then( ({ choice }) => {
         switch (choice) {
             case "Add a team member":
                 teamMemberPosition();
@@ -28,6 +28,7 @@ function mainMenu() {
 
             case "Exit and generate the HMTL.":
                 console.log("Thank you!")
+                render(employees)
                 break;
         }
     })
