@@ -28,7 +28,7 @@ const mainMenu = () => {
 
             default: "Exit and generate the HMTL."
             const output = render(employees)
-            fs.writeFileSync("template.html", output)
+            fs.writeFileSync(outputPath, output)
             console.log("Thank you! Template.html has been generated!")
                 break;
         }
