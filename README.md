@@ -1,145 +1,24 @@
-# Unit 10 OOP Homework: Template Engine - Employee Summary
+# Unit 10 OOP Homework: Template Engine - Employee Summary [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) 
 
-One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, *how* we design our code is just as important as the code itself. In this homework assignment, your challenge is to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, you will also be ensuring that all unit tests pass.
+## Description
+    This generates a team page (HTML) from a CLI application.
 
-
-## Instructions
-
-You will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
-
-```
-As a manager
-I want to generate a webpage that displays my team's basic info
-so that I have quick access to emails and GitHub profiles
-```
-
-How do you deliver this? Here are some guidelines:
-
-* Use the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the user for their email, id, and specific information based on their role with the company. For instance, an intern may provide their school, whereas an engineer may provide their GitHub username.
-
-* Your app will run as a Node CLI to gather information about each employee.
-
-* Below is an example of what your application may look like. Remember, the styling is completely up to you so try to make it unique.
-
-![Employee Summary 1](./Assets/10-OOP-homework-demo-1.png)
-![Employee Summary 2](./Assets/10-OOP-homework-demo-2.png)
-
-In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
-
-The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
-
-There are also unit tests to help you build the classes necessary.
-
-It is recommended that you follow this workflow:
-
-1. Run tests
-2. Create or update classes to pass a single test case
-3. Repeat
-
-🎗 Remember, you can run the tests at any time with `npm run test`
-
-It is recommended that you start with a directory structure that looks like this:
-
-```
-lib/           // classes and helper code
-output/        // rendered output
-templates/     // HTML template(s)
-test/          // jest tests
-  Employee.test.js
-  Engineer.test.js
-  Intern.test.js
-  Manager.test.js
-app.js         // Runs the application
-```
-
-### Hints
-
-* Create multiple HTML templates for each type of user. For example, you could use the following templates:
-
-  * `main.html`
-
-  * `engineer.html`
-  
-  * `intern.html`
-  
-  * `manager.html`
-
-* You will want to make your methods as pure as possible. This means try to make your methods simple so that they are easier to test.
-
-* The different employee types should all inherit some methods and properties from a base class of `Employee`.
-
-* In your HTML template files, you may want to add a placeholder character that helps your program identify where the dynamic markup begins and ends.
-
-## Minimum Requirements
-
-* Functional application.
-
-* GitHub repository with a unique name and a README describing the project.
-
-* User can use the CLI to generate an HTML page that displays information about their team.
-
-* All tests must pass.
-
-### Classes
-The project must have the these classes: `Employee`, `Manager`, `Engineer`,
-`Intern`. The tests for these classes in the `tests` directory must all pass.
-
-The first class is an `Employee` parent class with the following properties and
-methods:
-
-  * name
-  * id
-  * email
-  * getName()
-  * getId()
-  * getEmail()
-  * getRole() // Returns 'Employee'
-
-The other three classes will extend `Employee`. 
-
-In addition to `Employee`'s properties and methods, `Manager` will also have:
-
-  * officeNumber
-
-  * getRole() // Overridden to return 'Manager'
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have:
-
-  * github  // GitHub username
-
-  * getGithub()
-
-  * getRole() // Overridden to return 'Engineer'
-
-In addition to `Employee`'s properties and methods, `Intern` will also have:
-
-  * school 
-
-  * getSchool()
-
-  * getRole() // Overridden to return 'Intern'
-
-
-
-
-  # README-generator [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) 
-
-  ## Description
-    This generates a basic README template that can be fleshed out to create a concise and useful README.
-
-  ## Screenshot of the Deployed Application  
-  ![Deployed Application Screenshot](./screenshots/screenshot1.png)
+![Deployed Application Screenshot](./screenshots/ss1.png)
   
   ## Table of Contents
-  
-  1. [Installation](#Installation)
-  2. [Usage](#Usage)
-  3. [Tests](#Tests)
-  4. [Contributing](#Contributing)
-  5. [Acknowledgements](#Acknowledgements)
-  6. [Questions](#Questions)
+  1. [User Story](#UserStory)
+  2. [Installation](#Installation)
+  3. [Usage](#Usage)
+  4. [Tests](#Tests)
+  5. [GitHub Links](#GitHubLinks)
 
-  
+
+  ## UserStory
+  ```
+  As a manager
+  I want to generate a webpage that displays my team's basic info
+  so that I have quick access to emails and GitHub profiles
+  ```
 
   ## Installation
   [Intallation Video](https://drive.google.com/file/d/1dwzlDfxg3-XC1g0V89JrcU_TxbGkail3/view?usp=sharing)
@@ -154,19 +33,10 @@ In addition to `Employee`'s properties and methods, `Intern` will also have:
   
   ## Tests
   
-    npm tests
+    npm tests. The application passes all the provided tests.
+   
+  ## GitHubLinks
   
-  ## Contributing
+  [Git Hub Username](https://www.github.com/CodySamuels)
   
-    If you would like to contribute to this repository, please first discuss the changes you would like to make with a developer. You can merge a pull request after the review of at least two developers.
-  
-  ## Acknowledgements
-  
-  [CodySamuels](https://www.github.com/CodySamuels), the author.
-  
-  [README-Generator](https://www.github.com/CodySamuels/readme-generator), the project
-
-  
-  ## Questions
-
-    You can ask any questions at twowoodenspoons@gmail.com
+  [The Repo](https://github.com/CodySamuels/template-engine)

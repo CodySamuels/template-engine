@@ -1,3 +1,17 @@
-body {
-    background-color: dodgerblue;
+.jumbotron {
+    color: white;
+    background-image: url("https://ak.picdn.net/shutterstock/videos/12547280/thumb/5.jpg");
+}
+
+.card {
+    border: 0;
+    
+}
+
+.card-header {
+    background-color: white;
+}
+
+.body {
+    background-color: none;
 }
